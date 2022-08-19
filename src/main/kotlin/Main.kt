@@ -4,6 +4,7 @@ import kotlinx.coroutines.delay
 import utils.Des
 import utils.Requests
 import javax.swing.JOptionPane
+import kotlin.system.exitProcess
 
 fun login() {
     val des = Des()
@@ -46,11 +47,11 @@ suspend fun main() {
         if (applyData.contains("\"enrollResult\": true")) {
             //JOptionPane.showMessageDialog(null,"润啦","好",JOptionPane.INFORMATION_MESSAGE)
             println("TRUE! NICE")
-            break
+            exitProcess(114514)
         } else if (applyData.contains("\"enrollResult\": false")) {
             //JOptionPane.showMessageDialog(null,"润不了啦","完蛋",JOptionPane.ERROR_MESSAGE)
             println("FALSE! Just cheer up.")
-            break
+            exitProcess(114514)
         }
     }
 }
